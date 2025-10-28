@@ -20,10 +20,10 @@ const NavBar = () => {
         </div>
         <nav className="hidden items-center sm:flex">
           <ul className="flex gap-x-8">
-            <li className="cursor-pointer hover:text-orange-300"><Link to="/sobre">Sobre Nós</Link></li>
-            <li className="cursor-pointer hover:text-orange-300"><Link to="/menu">Menu</Link></li>
-            <li className="cursor-pointer hover:text-orange-300"><Link to="/galeria">Galeria</Link></li>
-            <li className="cursor-pointer hover:text-orange-300"><Link to="/contato">Contato</Link></li>
+            <li className="cursor-pointer hover:text-lime-400"><Link to="/sobre">Sobre Nós</Link></li>
+            <li className="cursor-pointer hover:text-lime-400"><Link to="/menu">Menu</Link></li>
+            <li className="cursor-pointer hover:text-lime-400"><Link to="/galeria">Galeria</Link></li>
+            <li className="cursor-pointer hover:text-lime-400"><Link to="/contato">Contato</Link></li>
           </ul>
         </nav>
       </div>
@@ -34,12 +34,20 @@ const NavBar = () => {
           </button>
           <nav>
             <ul className="flex flex-col items-center gap-y-2">
-              <li className="cursor-pointer hover:text-orange-300 border-b border-b-rose-200">
+              <button
+                className="cursor-pointer hover:text-lime-400 border-b-2 border-b-lime-300"
+                onClick={() => setIsOpen(false)}
+              >
                 <Link to="/sobre">Sobre Nós</Link>
-              </li>
-              <li className="cursor-pointer hover:text-orange-300 border-b border-b-rose-200"><Link to="/menu">Menu</Link></li>
-              <li className="cursor-pointer hover:text-orange-300 border-b border-b-rose-200"><Link to="/galeria">Galeria</Link></li>
-              <li className="cursor-pointer hover:text-orange-300 border-b border-b-rose-200"><Link to="/contato">Contato</Link></li>
+              </button>
+              <button
+                className="cursor-pointer hover:text-lime-400 border-b-2 border-b-lime-300"
+                onClick={() => setIsOpen(false)}
+              >
+                <Link to="/menu">Menu</Link>
+              </button>
+              <button className="cursor-pointer hover:text-lime-400 border-b-2 border-b-lime-300" onClick={() => setIsOpen(false)}><Link to="/galeria">Galeria</Link></button>
+              <button className="cursor-pointer hover:text-lime-400 border-b-2 border-b-lime-300" onClick={() => setIsOpen(false)}><Link to="/contato">Contato</Link></button>
             </ul>
           </nav>
         </div>

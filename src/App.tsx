@@ -1,12 +1,11 @@
 
 import { Routes, Route } from 'react-router-dom';
 
-
 import NavBar from './components/NavBar';
 
-// --- Páginas ---
 import Home from './pages/Home.tsx';
-import About from './components/About.tsx';
+import Menu from './pages/Menu.tsx';
+import AboutUs from './pages/About.tsx';
 
 function App() {
   return (
@@ -15,7 +14,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<About />} />
+        <Route path="/sobre" element={<AboutUs />} />
+        <Route path="/menu" element={<Menu />} />
         
       </Routes>
       
