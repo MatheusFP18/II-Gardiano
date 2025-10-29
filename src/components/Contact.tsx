@@ -48,6 +48,14 @@ const Contact = () => {
               reservas@iigiardino.br
             </a>
           </div>
+          <div className="border-b-2 border-rose-200 pb-2">
+            <h2 className="text-xl text-gray-900 mb-2">Horário de Atendimento</h2>
+            <p className="hover:text-lime-600 transition-colors">
+              18:00 às 22:00
+              <br />
+              Terça a Domingo
+            </p>
+          </div>
         </div>
       </div>
     </div>
