@@ -9,6 +9,7 @@ import AboutUs from './pages/About.tsx';
 import Gallery from './pages/Gallery.tsx';
 import Contact from './components/Contact.tsx';
 import Reservation from './pages/Reservation.tsx';
+import FooterPage from './pages/FooterPage.tsx';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
 
       </Routes>
       
-      {/* <Footer /> */}
+      <FooterPage />
     </>
   )
 }
