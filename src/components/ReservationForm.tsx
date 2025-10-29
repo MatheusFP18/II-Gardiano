@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const initialFormData = {
+const initialFormState = {
   name: '',
   email: '',
   phone: '',
@@ -10,7 +10,7 @@ const initialFormData = {
   message: '',
 };
 
-const initialErrors = {
+const initialErrorState = {
   email: '',
   phone: '',
   date: '',
@@ -21,19 +21,19 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneMaskRegex = /^(\d{0,2})(\d{0,5})(\d{0,4})$/;
 
 const ReservationForm = () => {
-  const [formData, setFormData] = useState(initialFormData);
-  const [errors, setErrors] = useState(initialErrors);
+  const [formData, setFormData] = useState(initialFormState);
+  const [errors, setErrors] = useState(initialErrorState);
 
   const today = new Date().toISOString().split('T')[0];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData(prevState => ({ ...prevState, [id]: value }));
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formattedPhone = formatPhone(e.target.value);
-    setFormData(prev => ({ ...prev, phone: formattedPhone }));
+    setFormData(prevState => ({ ...prevState, phone: formattedPhone }));
   };
 
   const handleGuestsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,15 +64,15 @@ const ReservationForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { email, phone, date, time } = formData;
-    const newErrors = { ...initialErrors };
+    const newErrors = { ...initialErrorState };
     let hasError = false;
 
     if (!validateEmail(email)) {
-      newErrors.email = 'Por favor, insira um e-mail válido.';
+      newErrors.email = 'Please enter a valid email.';
       hasError = true;
     }
     if (phone.replaceAll(/\D/g, '').length !== 11) {
-      newErrors.phone = 'O telefone deve ter 11 dígitos (DDD + número).';
+      newErrors.phone = 'The phone must have 11 digits (area code + number).';
       hasError = true;
     }
 
@@ -80,21 +80,21 @@ const ReservationForm = () => {
     const todayDate = new Date();
     todayDate.setHours(0, 0, 0, 0);
     if (selectedDate < todayDate) {
-      newErrors.date = 'A data da reserva não pode ser no passado.';
+      newErrors.date = 'The reservation date cannot be in the past.';
       hasError = true;
     }
 
     if (time < "18:00" || time > "22:00") {
-      newErrors.time = 'O horário de reserva deve ser entre 18:00 e 22:00.';
+      newErrors.time = 'The reservation time must be between 18:00 and 22:00.';
       hasError = true;
     }
 
     setErrors(newErrors);
 
     if (!hasError) {
-      console.log("Dados da reserva: ", formData);
+      console.log("Reservation data: ", formData);
       alert("Reserva confirmada!");
-      setFormData(initialFormData);
+      setFormData(initialFormState);
     }
   };
 

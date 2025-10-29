@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import MenuItemCard from './Card';
 import { pratosPrincipais, sobremesas } from '../data/menuData';
 
-const pratoDestaque = pratosPrincipais[0];
-const sobremesaDestaque = sobremesas[0];
+const featuredDish = pratosPrincipais[0];
+const featuredDessert = sobremesas[0];
 
 const MenuPreview = () => {
   return (
@@ -19,12 +19,12 @@ const MenuPreview = () => {
 
         <div className="max-w-4xl mx-auto flex flex-col gap-8">
           
-          {pratoDestaque && (
-            <MenuItemCard itemCategory={pratoDestaque} />
+          {featuredDish && (
+            <MenuItemCard itemCategory={featuredDish} />
           )}
 
-          {sobremesaDestaque && (
-            <MenuItemCard itemCategory={sobremesaDestaque} />
+          {featuredDessert && (
+            <MenuItemCard itemCategory={featuredDessert} />
           )}
 
         </div>

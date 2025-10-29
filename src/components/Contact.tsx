@@ -17,7 +17,7 @@ const Contact = () => {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Localização do restaurente"
+            title="Restaurant Location"
             className="rounded-xl"
           ></iframe>
         </div>

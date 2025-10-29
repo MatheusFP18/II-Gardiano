@@ -1,10 +1,10 @@
 
 const Categories = ({
-  numCategoriaSelecionada,
-  setNumCategoriaSelecionada,
+  selectedCategoryIndex,
+  setSelectedCategoryIndex,
 }: {
-  numCategoriaSelecionada: number;
-  setNumCategoriaSelecionada: (num: number) => void;
+  selectedCategoryIndex: number;
+  setSelectedCategoryIndex: (num: number) => void;
 }) => {
   const categories = [
     { id: 0, name: "Entradas" },
@@ -23,11 +23,11 @@ const Categories = ({
               <button
                 key={category.id}
                 className={`shrink-0 ${
-                  category.id === numCategoriaSelecionada
+                  category.id === selectedCategoryIndex
                     ? "border-b-2 border-lime-400"
                     : ""
                 }`}
-                onClick={() => setNumCategoriaSelecionada(category.id)}
+                onClick={() => setSelectedCategoryIndex(category.id)}
               >
                 {category.name}
               </button>
@@ -39,11 +39,11 @@ const Categories = ({
             <button
               key={category.id}
               className={`${
-                category.id === numCategoriaSelecionada
+                category.id === selectedCategoryIndex
                   ? "border-b-2 border-lime-400"
                   : ""
               }`}
-              onClick={() => setNumCategoriaSelecionada(category.id)}
+              onClick={() => setSelectedCategoryIndex(category.id)}
             >
               {category.name}
             </button>
