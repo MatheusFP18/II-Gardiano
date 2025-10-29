@@ -1,4 +1,5 @@
-import home from "../assets/images/Home.png"; // <-- Atualize este caminho
+import { Link } from "react-router-dom";
+import home from "../assets/images/Home.png";
 
 const Home = () => {
   return (
@@ -18,6 +19,15 @@ const Home = () => {
               Desfrute de uma experiência gastronômica inesquecível com a
               autêntica culinária italiana em um ambiente... e acolhedor.
             </p>
+            
+            <div className="text-center mt-12">
+          <Link 
+            to="/reserva" 
+            className="bg-lime-500 text-gray-900 font-bold py-3 px-6 rounded-md hover:bg-lime-600 transition-colors text-lg font-serif"
+          >
+            Faça sua reserva
+          </Link>
+        </div>
           </div>
         </div>
       </div>
